@@ -5,14 +5,20 @@ This repository is for experimenting with git flows.
 ## Rebase
 What happens when you do a rebase merge in the github editor?
 
+- It merges all the commits onto the head of the main branch.
+- Anyone else that pulls from remote will need to handle merges.
+
+How do you handle merges without having merge commits?
+- Don't share branches.
+- Changes should all be in their own respective feature branches.
+- Only merge through PRs.
+
 ## Graphite
 
 ### Split
-Can you select out only specific commits to put into a new stacked PR?
+Can you select only specific commits to split into a new PR and leave the rest in the original once?
+- Yes. You can select the destination branch of the commits. Just use the original branch for the commits you want to keep.
 
-- Yes. When splitting, you can specify which branches to split the commits into. Just specify the existing branch to keep those commits in the original PR.
-
-What happens if you split all of the commits into different branches?
-
-- It seems like it will create new branches with the corresponding commits and the original branch will still retain all of the original commits as well.
+What happens if you split out all of the commits?
+- The original PR will still retain all of the original commits and new branches will be created pointing to the same original commits. (i.e. it's duplicated)
 
